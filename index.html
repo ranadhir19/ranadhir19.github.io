@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranadhir Ghosh — AI Knowledge Hub</title>
+<meta name="description" content="Open-source AI libraries, guides and research companions by Dr. Ranadhir Ghosh — giving back to the community.">
+<style>
+:root{
+  --bg:#0b1220; --bg2:#0e1626; --surface:#111c30; --surface2:#16233c;
+  --text:#e8eef7; --muted:#9fb0c7; --faint:#6b7d99;
+  --accent:#5cc8ff; --accent2:#7d9bff; --gold:#ffcf6e; --green:#5fe3a1;
+  --border:#22314d; --radius:14px;
+  --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;
+  background-image:radial-gradient(1200px 500px at 80% -10%,rgba(92,200,255,.08),transparent),
+                   radial-gradient(900px 420px at 10% 0%,rgba(125,155,255,.07),transparent);}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+/* nav */
+.nav{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+.brand{font-weight:700;letter-spacing:.2px}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:22px;font-size:.92rem}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+/* hero */
+.hero{padding:88px 0 56px;text-align:center}
+.kicker{display:inline-block;font-family:var(--mono);font-size:.78rem;letter-spacing:2.5px;color:var(--accent);
+  border:1px solid var(--border);border-radius:999px;padding:6px 16px;margin-bottom:26px;background:rgba(92,200,255,.06)}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.15;font-weight:800;letter-spacing:-.5px;margin-bottom:20px}
+.hero h1 .hl{color:var(--accent)}
+.lede{max-width:720px;margin:0 auto 14px;color:var(--muted);font-size:1.08rem}
+.creed{max-width:720px;margin:26px auto 0;padding:22px 26px;background:var(--surface);border:1px solid var(--border);
+  border-left:3px solid var(--gold);border-radius:var(--radius);font-size:1.02rem;color:var(--text);text-align:left}
+.creed b{color:var(--gold)}
+/* stats */
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:40px 0 10px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 26px;min-width:150px}
+.stat .n{font-size:1.7rem;font-weight:800;color:var(--accent)}
+.stat .l{font-size:.8rem;color:var(--faint);letter-spacing:.6px;text-transform:uppercase}
+/* sections */
+section{padding:52px 0}
+h2{font-size:1.6rem;margin-bottom:6px;letter-spacing:-.3px}
+.sub{color:var(--muted);margin-bottom:28px;max-width:760px}
+/* repo cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:1.5px;color:var(--accent2);margin-bottom:10px;text-transform:uppercase}
+.card h3{font-size:1.18rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.94rem;flex:1}
+.card .meta{margin:14px 0;font-family:var(--mono);font-size:.78rem;color:var(--faint)}
+.card .meta code{color:var(--green);background:rgba(95,227,161,.08);padding:2px 8px;border-radius:6px;font-size:.76rem}
+.card .links{margin-top:14px;display:flex;gap:14px;font-size:.9rem;font-weight:600}
+.badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:999px;margin-bottom:12px}
+.badge.live{background:rgba(95,227,161,.12);color:var(--green);border:1px solid rgba(95,227,161,.35)}
+.badge.soon{background:rgba(255,207,110,.1);color:var(--gold);border:1px solid rgba(255,207,110,.35)}
+/* paths */
+.paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.path{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.path h3{font-size:1.05rem;margin-bottom:10px;color:var(--accent)}
+.path ol{margin-left:20px;color:var(--muted);font-size:.93rem}
+.path ol li{margin-bottom:8px}
+.path ol li b{color:var(--text);font-weight:600}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.about .box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
+.about h3{margin-bottom:12px;font-size:1.1rem}
+.about ul{list-style:none;color:var(--muted);font-size:.94rem}
+.about ul li{margin-bottom:10px;padding-left:22px;position:relative}
+.about ul li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+/* footer */
+footer{border-top:1px solid var(--border);padding:36px 0 48px;color:var(--faint);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .fl{display:flex;gap:20px}
+.cta-row{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 26px;border-radius:10px;font-weight:700;font-size:.95rem}
+.btn.primary{background:var(--accent);color:#06121f}
+.btn.primary:hover{text-decoration:none;filter:brightness(1.08)}
+.btn.ghost{border:1px solid var(--border);color:var(--text)}
+.btn.ghost:hover{text-decoration:none;border-color:var(--accent)}
+code.inline{font-family:var(--mono);font-size:.85em;background:rgba(92,200,255,.08);padding:2px 7px;border-radius:6px;color:var(--accent)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <div class="brand">Ranadhir Ghosh <span>/ AI Knowledge Hub</span></div>
+  <div class="nav-links"><a href="#libraries">Libraries</a><a href="#paths">Start here</a><a href="#about">About</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="kicker">OPEN SOURCE &nbsp;·&nbsp; OPEN KNOWLEDGE</div>
+  <h1>Twenty years of AI,<br>distilled for <span class="hl">the community</span>.</h1>
+  <p class="lede">Everything here is free, reproducible, and built to teach — not just to show.
+  Each library pairs working code with the reasoning behind it, so you can learn the ideas, not only run them.</p>
+  <div class="creed"><b>Why open?</b> The community's shared knowledge — papers, code, discussions — built my understanding over two decades.
+  These repositories are my way of paying that forward: production-grade ideas, explained from first principles, for anyone who wants to learn.</div>
+  <div class="stats">
+    <div class="stat"><div class="n">3</div><div class="l">Open libraries</div></div>
+    <div class="stat"><div class="n">20+</div><div class="l">Systems &amp; demos</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">Reproducible</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">Paywalls</div></div>
+  </div>
+  <div class="cta-row">
+    <a class="btn primary" href="#libraries">Explore the libraries</a>
+    <a class="btn ghost" href="https://github.com/ranadhir19">GitHub profile</a>
+  </div>
+</div></header>
+
+<section id="libraries"><div class="wrap">
+  <h2>The libraries</h2>
+  <p class="sub">Three collections, one philosophy: real implementations, measured results, honest explanations. Pick the one that matches what you want to learn or build.</p>
+  <div class="cards">
+    <div class="card">
+      <span class="badge live">Live</span>
+      <div class="tag">Library · pip installable</div>
+      <h3>agentic-systems-lab</h3>
+      <p>Six original agentic-AI systems as a reusable Python library: multi-agent orchestration with learned routing, tamper-evident evidence ledgers, LLM inference serving simulation, portable model-agnostic skills, collective memory with adversarial robustness, and self-healing workflows. Each system is implemented, benchmarked, and fully reproducible.</p>
+      <div class="meta"><code>pip install agentic-systems-lab</code></div>
+      <div class="links"><a href="https://ranadhir19.github.io/agentic-systems-lab/">Site →</a><a href="https://github.com/ranadhir19/agentic-systems-lab">Code →</a></div>
+    </div>
+    <div class="card">
+      <span class="badge soon">Building now</span>
+      <div class="tag">Library · from first principles</div>
+      <h3>llm-inference-engine</h3>
+      <p>Advanced LLM inference systems built from the ground up: transformers from scratch, paged KV-cache, speculative decoding, disaggregated prefill/decode serving, quantization workbench, MoE routing, roofline analysis, and request scheduling. Companion to the book <em>Building &amp; Customizing Inference Engines for LLMs</em>.</p>
+      <div class="meta"><code>pip install llm-inference-engine</code> <span style="color:var(--faint)">(soon)</span></div>
+      <div class="links"><a href="https://github.com/ranadhir19/llm-inference-engine">Code →</a></div>
+    </div>
+    <div class="card">
+      <span class="badge soon">Building now</span>
+      <div class="tag">Research companions</div>
+      <h3>research</h3>
+      <p>Runnable companions to published research papers — each paper's core contribution implemented as a working application with experiments: option pricing under extreme regimes, document layout VLMs, agent closure, ethical AI frameworks, world models, continual learning, and siamese recognition.</p>
+      <div class="meta">paper → code, faithfully</div>
+      <div class="links"><a href="https://github.com/ranadhir19/research">Code →</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="paths"><div class="wrap">
+  <h2>Where should you start?</h2>
+  <p class="sub">Three guided paths depending on your goal. Every project page follows the same shape — Problem, Gap, Solution, Architecture, Results, Insights, Implementation — so you always know where you are.</p>
+  <div class="paths">
+    <div class="path"><h3>🤖 I want to build AI agents</h3><ol>
+      <li><b>agentic-systems-lab → user guide</b>: install the package, run the 5-minute quickstarts.</li>
+      <li><b>meridian</b>: how multi-agent orchestration and learned routing work.</li>
+      <li><b>healflow</b>: making agent workflows reliable in production.</li>
+      <li><b>sentinel</b>: auditability and tamper-evidence for agent actions.</li>
+    </ol></div>
+    <div class="path"><h3>⚙️ I want to understand LLM inference</h3><ol>
+      <li><b>llm-inference-engine → nano-transformer</b>: a decoder, built from scratch in numpy.</li>
+      <li><b>paged-kv + roofline</b>: where the memory actually goes.</li>
+      <li><b>spec-decode + disagg-serve</b>: how production serving gets fast.</li>
+      <li><b>quant-lab + sched-lab</b>: the cost/latency levers that matter.</li>
+    </ol></div>
+    <div class="path"><h3>📄 I want research I can run</h3><ol>
+      <li><b>research → pick a paper</b>: each page cites its paper.</li>
+      <li>Run the <b>example</b>: the paper's core idea as working code.</li>
+      <li>Read <b>Results vs Insights</b>: what the experiments actually showed.</li>
+    </ol></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <p class="sub">Who builds these, and why you can trust the engineering.</p>
+  <div class="about">
+    <div class="box"><h3>Dr. Ranadhir Ghosh</h3><ul>
+      <li>Principal Research Scientist, AI &amp; Innovation — 20+ years across AI research, quant finance, and enterprise AI</li>
+      <li>PhD in AI &amp; Computational Neuroscience; 8 issued US patents, 30+ published applications</li>
+      <li>Author of books on AI &amp; humanity and on LLM inference engines</li>
+      <li>Builder of production agentic AI: multi-agent platforms, RAG, AI governance, AI SRE</li>
+    </ul></div>
+    <div class="box"><h3>How to connect</h3><ul>
+      <li><a href="https://github.com/ranadhir19">github.com/ranadhir19</a> — all code lives here</li>
+      <li><a href="https://www.linkedin.com/in/ranadhirghosh">LinkedIn</a> — writing on AI engineering</li>
+      <li>Found a bug or a better idea? Open an issue on any repo — community input genuinely shapes these libraries.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>© 2026 Ranadhir Ghosh · MIT licensed · Built in the open, for the community.</div>
+  <div class="fl"><a href="https://github.com/ranadhir19">GitHub</a><a href="https://www.linkedin.com/in/ranadhirghosh">LinkedIn</a></div>
+</div></footer>
+</body>
+</html>
