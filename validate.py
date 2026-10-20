@@ -42,7 +42,7 @@ HOME = Path.home()
 # Repositories that exist on the ranadhir19 GitHub account.
 KNOWN_REPOS = {
     "agentic-systems-lab", "governed-agents", "llm-inference-engine",
-    "research", "open-managed-agents", "snowflake-assignment",
+    "research", "open-managed-agents", "skillforge", "snowflake-assignment",
     "ranadhir19.github.io", "journal", "banf1", "banf1-wix", "banf",
     "banf2", "customer_recommendation", "imageprocessing",
 }

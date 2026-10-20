@@ -35,7 +35,7 @@ python3 validate.py        # exit 0 and final line "HARNESS GREEN" required
 
 ```
 [PASS] html-parse - parsed cleanly; 3 ids, balanced nesting
-[PASS] links - 4 anchors, 5 repo links, 3 Pages links, 0 relative, 2 other external (not fetched, offline)
+[PASS] links - 4 anchors, 6 repo links, 3 Pages links, 0 relative, 3 other external (not fetched, offline)
 [PASS] gate-scan - 0 candidate hits across 4 files
 [PASS] consistency - index.html present; all 0 README-referenced local paths exist
 HARNESS GREEN
