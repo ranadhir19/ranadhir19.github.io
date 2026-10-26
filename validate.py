@@ -50,13 +50,13 @@ HOME = Path.home()
 # Repositories that exist on the ranadhir19 GitHub account.
 KNOWN_REPOS = {
     "agentic-systems-lab", "governed-agents", "llm-inference-engine",
-    "research", "open-managed-agents", "skillforge", "snowflake-assignment",
+    "research", "open-managed-agents", "open-company-harness", "skillforge", "snowflake-assignment",
     "ranadhir19.github.io", "journal", "banf1", "banf1-wix", "banf",
     "banf2", "customer_recommendation", "imageprocessing",
 }
 # First path segments served as project Pages sites under
 # ranadhir19.github.io/<path>/ (the hub itself is the root).
-KNOWN_PAGES_PATHS = {"agentic-systems-lab", "llm-inference-engine", "research"}
+KNOWN_PAGES_PATHS = {"agentic-systems-lab", "llm-inference-engine", "research", "open-company-harness"}
 
 VOID_ELEMENTS = {"area", "base", "br", "col", "embed", "hr", "img",
                  "input", "link", "meta", "param", "source", "track", "wbr"}
